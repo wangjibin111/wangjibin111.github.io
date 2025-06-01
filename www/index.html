@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>红英币管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>红英币管理系统</h1>
+    <!-- 操作按钮 -->
+    <button onclick="showAdd()">加分</button>
+    <button onclick="showSub()">扣分</button>
+    <button onclick="queryPoints()">查询</button>
+    <button onclick="clearPoints()">清空积分</button>
+    
+    <!-- 加分弹窗 -->
+    <div id="addPopup" class="popup" style="display: none;">
+      <h2>批量加分</h2>
+      <textarea id="addText" placeholder="格式：学号 分数&#10;例如：1 5&#10;2 3"></textarea>
+      <button onclick="addPoints()">提交</button>
+      <button onclick="closePopup('addPopup')">取消</button>
+    </div>
+    
+    <!-- 扣分弹窗 -->
+    <div id="subPopup" class="popup" style="display: none;">
+      <h2>批量扣分</h2>
+      <textarea id="subText" placeholder="格式：学号 分数"></textarea>
+      <button onclick="subPoints()">提交</button>
+      <button onclick="closePopup('subPopup')">取消</button>
+    </div>
+    
+    <!-- 查询结果 -->
+    <div id="queryResult" class="result" style="display: none;">
+      <h2>查询结果</h2>
+      <textarea id="queryText" readonly></textarea>
+      <button onclick="closePopup('queryResult')">关闭</button>
+    </div>
+    
+    <!-- 消息提示 -->
+    <div id="msg" class="msg"></div>
+  </div>
+</body>
+</html>
